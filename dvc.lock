@@ -1,0 +1,30 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: uv run scripts/preprocess.py
+    deps:
+    - path: data/CC_GENERAL.csv
+      hash: md5
+      md5: c9b0bb7fc9e241b81da92c3528103664
+      size: 902879
+    outs:
+    - path: data/processed.csv
+      hash: md5
+      md5: a07721b8bc60efde032fcb601e4e9a08
+      size: 1014476
+  train:
+    cmd: uv run scripts/train.py
+    deps:
+    - path: data/processed.csv
+      hash: md5
+      md5: a07721b8bc60efde032fcb601e4e9a08
+      size: 1014476
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 3c2ecb54d4846a25bb196fdf41a2883d
+      size: 94
+    - path: models/model.pkl
+      hash: md5
+      md5: db78fa337197c1f60cdb59dff7949f5e
+      size: 38035

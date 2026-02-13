@@ -1,0 +1,16 @@
+stages:
+  preprocess:
+    cmd: uv run scripts/preprocess.py
+    deps:
+    - data/CC_GENERAL.csv
+    outs:
+    - data/processed.csv
+  train:
+    cmd: uv run scripts/train.py
+    deps:
+    - data/processed.csv
+    outs:
+    - models/model.pkl
+    metrics:
+    - metrics.json:
+        cache: false
