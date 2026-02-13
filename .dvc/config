@@ -1,0 +1,5 @@
+[core]
+    remote = myremote
+['remote "myremote"']
+    url = gs://bzeng_mlops_dvc_lab
+    credentialpath = /Users/bryanzeng/Downloads/stalwart-edge-485700-b8-d52cb1bbc84a.json

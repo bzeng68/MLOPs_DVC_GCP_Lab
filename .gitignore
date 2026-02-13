@@ -8,3 +8,8 @@ wheels/
 
 # Virtual environments
 .venv
+
+# DVC pipeline outputs (tracked by DVC, not Git)
+/data/processed.csv
+/models/
+/metrics.json
